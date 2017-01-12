@@ -15,7 +15,7 @@ ENV LG_FILE /etc/logstash/conf.d/logstash-iserver.conf
 ENV CONSUL consul:8500
 ENV SERVICE consul-8500
 
-CMD /docker-entrypoint.sh -r -f /etc/logstash/conf.d/ --auto-reload --reload-interval 2 \
+CMD /docker-entrypoint.sh -r -f /etc/logstash/conf.d/ --allow-unsafe-shutdown --auto-reload --reload-interval 2 \
 & CONSUL_TEMPLATE_LOG=debug consul-template \
   -consul=$CONSUL \
   -template "$CT_FILE:$LG_FILE:echo 'reloaded'";
