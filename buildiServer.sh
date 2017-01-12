@@ -55,6 +55,7 @@ wget -nc $URL_iServer -O ./Dockerfile_iServer/supermap_iserver_8.1.0.tar.gz
 
 wget -nc $URL_consul -O /tmp/consul-template.zip
 unzip /tmp/consul-template.zip -d ./DR-CoN
+cp ./DR-CoN/consul-template ./logstash-CoN
 
 echo `pwd`
 docker-compose up -d 
