@@ -1,6 +1,6 @@
 FROM logstash:2.4.1
 
-ADD ./DR-CoN/consul-template /usr/local/bin
+ADD ./consul-template /usr/local/bin
 
 #Setup Consul Template Files
 RUN mkdir /etc/consul-templates
