@@ -69,6 +69,7 @@ echo "Make sure port 8090 and 8081 are open on host"
 printf "\n"
 
 echo "View iServer At: http://${EXTERNAL_IP} or http://${EXTERNAL_IP}/iserver"
+echo "View Log Center At: http://${EXTERNAL_IP}:5601"
 echo "View Mongodb At: http://${EXTERNAL_IP}:8081 , admin/supermap"
 echo "View MySQL At: http://${EXTERNAL_IP}:8082 , iserver/iserver"
 echo "View Consul At: http://${EXTERNAL_IP}:8500"
