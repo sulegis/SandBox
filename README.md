@@ -10,7 +10,7 @@ Just Sandbox
  * 表示扩张为2个iserver节点，访问地址不变，http://${EXTERNAL_IP}
 
 ##后台管理地址
- * 查看iServer所有节点: http://${EXTERNAL_IP}:8500/v1/catalog/service/iserver"
+ * 查看iServer所有节点: http://${EXTERNAL_IP}:8500/v1/catalog/service/iserver-8090"
  * "View Log Center At: http://${EXTERNAL_IP}:5601"
  * "View Mongodb At: http://${EXTERNAL_IP}:8081 , admin/supermap"
  * "View MySQL At: http://${EXTERNAL_IP}:8082 , iserver/iserver"
