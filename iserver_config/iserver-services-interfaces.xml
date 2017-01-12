@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<application> 
+  <interfaces> 
+    <!-- 发布Handler服务的服务接口-->  
+    <interface name="handler" class="com.supermap.services.handler.HandlerServlet"></interface>  
+    <!-- 发布 WMS 1.1.1 的服务接口，支持地图服务组件-->  
+    <interface name="wms111" class="com.supermap.services.wms.WMSServlet"> 
+      <config class="com.supermap.services.wms.WMSConfig"> 
+        <version>1.1.1</version>
+        <sld>
+          <pointStyles/>
+          <lineStyles/>
+          <polygonStyles>
+          <string>/opt/iserver_config/config/region.sld</string>
+          </polygonStyles>
+          <textStyles/>
+        </sld>
+      </config> 
+    </interface>  
+    <!-- 发布 WMS 1.3.0 的服务接口，支持地图服务组件-->  
+    <interface name="wms130" class="com.supermap.services.wms.WMSServlet"> 
+      <config class="com.supermap.services.wms.WMSConfig"> 
+        <version>1.3.0</version> 
+      </config> 
+    </interface>  
+    <!-- 发布 WFS 1.0.0 的服务接口，支持数据服务组件-->  
+    <interface name="wfs100" class="com.supermap.services.wfs.WFSServlet">
+	 <config class="com.supermap.services.wfs.WFSConfig"> 
+        <version>1.0.0</version> 
+      </config>
+	</interface>
+	<!-- 发布 WFS 2.0.0 的服务接口，支持数据服务组件-->  
+	<interface name="wfs200" class="com.supermap.services.wfs.WFSServlet">
+	 <config class="com.supermap.services.wfs.WFSConfig"> 
+        <version>2.0.0</version> 
+      </config>
+	</interface>
+    <!-- 发布 SuperMap iServer REST 服务的服务接口，支持所有服务组件-->  
+    <interface name="rest" class="com.supermap.services.rest.RestServlet"> 
+      <config class="com.supermap.services.rest.RestConfig"> 
+        <accessControlAllowOrigin>*</accessControlAllowOrigin> 
+      </config> 
+    </interface>  
+    <interface name="restjsr" class="com.supermap.services.rest.JaxrsServletForJersey"> 
+      <config class="com.supermap.services.rest.JaxrsConfigForJersey"> 
+        <accessControlAllowOrigin>*</accessControlAllowOrigin> 
+      </config> 
+    </interface>  
+    <interface name="wmts100" class="com.supermap.services.wmts.WMTSServlet"> 
+      <config class="com.supermap.services.wmts.WMTSConfig"> 
+        <!-- 以下配置可选 -->  
+        <identification> 
+          <title>示例 WMTS 服务</title>  
+          <description>SuperMap iServer 基于示范数据发布的 WMTS 服务</description>  
+          <keywords> 
+            <string>iServer</string>  
+            <string>Sample Data</string> 
+          </keywords>  
+          <fees>none</fees>  
+          <accessConstraints>none</accessConstraints>  
+          <serviceType>OGC WMTS</serviceType>  
+          <serviceTypeVersion>1.0.0</serviceTypeVersion> 
+        </identification>  
+        <provider> 
+          <providerName>北京超图软件股份有限公司</providerName>  
+          <providerSite>http://www.supermap.com.cn</providerSite>  
+          <serviceContact> 
+            <individualName>联系人姓名</individualName>  
+            <positionName>联系人职位</positionName>  
+            <phoneNumber>+86-10-59896655</phoneNumber>  
+            <faxNumber>+86-10-59896666</faxNumber>  
+            <deliveryPoint>北京市朝阳区酒仙桥北路甲10号院电子城IT产业园107号楼6层北京超图软件股份有限公司</deliveryPoint>  
+            <addressCity>北京</addressCity>  
+            <addressAdministrativeArea>北京</addressAdministrativeArea>  
+            <addressPostalCode>100015</addressPostalCode>  
+            <addressCountry>中国</addressCountry>  
+            <addressElectronicMailAddress>support@supermap.com</addressElectronicMailAddress> 
+          </serviceContact> 
+        </provider>  
+		<!-- 可选配置结束 --> 
+        <tileMatrixSets>
+			<com.supermap.services.wmts.TileMatrixSet>
+			  <wellKnownScaleSet>Custom</wellKnownScaleSet>
+			  <scales/>
+			  <dpi>90.7142857142857</dpi>
+			  <tileWidth>256</tileWidth>
+			  <tileHeight>256</tileHeight>
+			</com.supermap.services.wmts.TileMatrixSet>
+			<com.supermap.services.wmts.TileMatrixSet>
+			  <wellKnownScaleSet>GlobalCRS84Scale</wellKnownScaleSet>
+			</com.supermap.services.wmts.TileMatrixSet>
+			<com.supermap.services.wmts.TileMatrixSet>
+			  <wellKnownScaleSet>GoogleMapsCompatible</wellKnownScaleSet>
+			</com.supermap.services.wmts.TileMatrixSet>
+		</tileMatrixSets>
+      </config> 
+    </interface>  
+    <interface name="wmts-china" class="com.supermap.services.wmts.WMTSServlet"> 
+      <config class="com.supermap.services.wmts.WMTSConfig"> 
+        <!-- 以下配置可选 -->  
+        <identification> 
+          <title>示例 WMTS 服务</title>  
+          <description>SuperMap iServer 基于示范数据发布的 WMTS 服务</description>  
+          <keywords> 
+            <string>iServer</string>  
+            <string>Sample Data</string> 
+          </keywords>  
+          <fees>none</fees>  
+          <accessConstraints>none</accessConstraints>  
+          <serviceType>OGC WMTS</serviceType>  
+          <serviceTypeVersion>1.0.0</serviceTypeVersion> 
+        </identification>  
+        <provider> 
+          <providerName>北京超图软件股份有限公司</providerName>  
+          <providerSite>http://www.supermap.com.cn</providerSite>  
+          <serviceContact> 
+            <individualName>联系人姓名</individualName>  
+            <positionName>联系人职位</positionName>  
+            <phoneNumber>+86-10-59896655</phoneNumber>  
+            <faxNumber>+86-10-59896666</faxNumber>  
+            <deliveryPoint>北京市朝阳区酒仙桥北路甲10号院电子城IT产业园107号楼6层北京超图软件股份有限公司</deliveryPoint>  
+            <addressCity>北京</addressCity>  
+            <addressAdministrativeArea>北京</addressAdministrativeArea>  
+            <addressPostalCode>100015</addressPostalCode>  
+            <addressCountry>中国</addressCountry>  
+            <addressElectronicMailAddress>support@supermap.com</addressElectronicMailAddress> 
+          </serviceContact> 
+        </provider>  
+        <!-- 可选配置结束 -->  
+		<tileMatrixSets>
+			<com.supermap.services.wmts.TileMatrixSet>
+			  <wellKnownScaleSet>ChinaPublicServices</wellKnownScaleSet>
+			</com.supermap.services.wmts.TileMatrixSet>
+		</tileMatrixSets>
+      </config> 
+    </interface>  
+    <interface name="wcs111" class="com.supermap.services.wcs.WCSServlet"> 
+      <config class="com.supermap.services.wcs.WCSConfig"> 
+        <version>1.1.1</version>  
+        <!-- 以下配置可选 -->  
+        <identification> 
+          <title>示例 WCS 服务</title>  
+          <description>SuperMap iServer 基于示范数据发布的 WCS 服务</description>  
+          <keywords> 
+            <string>iServer</string>  
+            <string>Sample Data</string> 
+          </keywords>  
+          <fees>none</fees>  
+          <accessConstraints>none</accessConstraints>  
+          <serviceType>OGC WCS</serviceType>  
+          <serviceTypeVersion>1.1.1</serviceTypeVersion> 
+        </identification>  
+        <provider> 
+          <providerName>北京超图软件股份有限公司</providerName>  
+          <providerSite>http://www.supermap.com.cn</providerSite>  
+          <serviceContact> 
+            <individualName>联系人姓名</individualName>  
+            <positionName>联系人职位</positionName>  
+            <phoneNumber>+86-10-59896655</phoneNumber>  
+            <faxNumber>+86-10-59896666</faxNumber>  
+            <deliveryPoint>北京市朝阳区酒仙桥北路甲10号院电子城IT产业园107号楼6层北京超图软件股份有限公司</deliveryPoint>  
+            <addressCity>北京</addressCity>  
+            <addressAdministrativeArea>北京</addressAdministrativeArea>  
+            <addressPostalCode>100015</addressPostalCode>  
+            <addressCountry>中国</addressCountry>  
+            <addressElectronicMailAddress>support@supermap.com</addressElectronicMailAddress> 
+          </serviceContact> 
+        </provider> 
+      </config> 
+    </interface>  
+    <interface name="wcs112" class="com.supermap.services.wcs.WCSServlet"> 
+      <config class="com.supermap.services.wcs.WCSConfig"> 
+        <version>1.1.2</version>  
+        <!-- 以下配置可选 -->  
+        <identification> 
+          <title>示例 WCS 服务</title>  
+          <description>SuperMap iServer 基于示范数据发布的 WCS 服务</description>  
+          <keywords> 
+            <string>iServer</string>  
+            <string>Sample Data</string> 
+          </keywords>  
+          <fees>none</fees>  
+          <accessConstraints>none</accessConstraints>  
+          <serviceType>OGC WCS</serviceType>  
+          <serviceTypeVersion>1.1.2</serviceTypeVersion> 
+        </identification>  
+        <provider> 
+          <providerName>北京超图软件股份有限公司</providerName>  
+          <providerSite>http://www.supermap.com.cn</providerSite>  
+          <serviceContact> 
+            <individualName>联系人姓名</individualName>  
+            <positionName>联系人职位</positionName>  
+            <phoneNumber>+86-10-59896655</phoneNumber>  
+            <faxNumber>+86-10-59896666</faxNumber>  
+            <deliveryPoint>北京市朝阳区酒仙桥北路甲10号院电子城IT产业园107号楼6层北京超图软件股份有限公司</deliveryPoint>  
+            <addressCity>北京</addressCity>  
+            <addressAdministrativeArea>北京</addressAdministrativeArea>  
+            <addressPostalCode>100015</addressPostalCode>  
+            <addressCountry>中国</addressCountry>  
+            <addressElectronicMailAddress>support@supermap.com</addressElectronicMailAddress> 
+          </serviceContact> 
+        </provider> 
+      </config> 
+    </interface>
+	<interface  name="wps100" class="com.supermap.services.wps.WPSServlet"> 
+      <config class="com.supermap.services.wps.WPSConfig"> 
+        <version>1.0.0</version> 
+      </config> 
+    </interface>
+	<interface class="com.supermap.services.rest.AGSRestServlet" name="arcgisrest"> 
+      <config class="com.supermap.services.rest.AGSRestConfig">   
+        <accessControlAllowOrigin>*</accessControlAllowOrigin>
+      </config> 
+    </interface>
+    <interface class="com.supermap.services.rest.BaiduRestServlet" name="baidurest"> 
+      <config class="com.supermap.services.rest.RestConfig">   
+        <accessControlAllowOrigin>*</accessControlAllowOrigin>
+      </config> 
+    </interface>	
+	<interface class="com.supermap.services.rest.GoogleRestServlet" name="googlerest"> 
+      <config class="com.supermap.services.rest.RestConfig">   
+        <accessControlAllowOrigin>*</accessControlAllowOrigin>
+      </config> 
+    </interface>
+	<interface class="com.supermap.services.rest.TMSRestServlet" name="tmsrest"> 
+		<config class="com.supermap.services.rest.RestConfig">   
+			<accessControlAllowOrigin>*</accessControlAllowOrigin>
+		</config> 
+	</interface>
+	<interface class="com.supermap.services.rest.OSMRestServlet" name="osmrest"> 
+		<config class="com.supermap.services.rest.RestConfig">   
+			<accessControlAllowOrigin>*</accessControlAllowOrigin>
+		</config> 
+	</interface>
+  </interfaces> 
+</application>

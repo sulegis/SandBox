@@ -1,0 +1,17 @@
+input {
+    {{range service "iserver-33333"}}
+    log4j {
+        mode => "client"
+        type => "is-log4jclient"
+        add_field => { "container" => "{{.ID}}" }
+        host => "{{.Address}}"
+        #port => {{.Port}}
+        port => 33333
+    }{{end}}
+}
+output {
+	stdout{ codec => rubydebug }
+        elasticsearch {
+                hosts => "elasticsearch:9200"
+        }
+}

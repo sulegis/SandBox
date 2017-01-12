@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.5.xsd">
+	
+	
+ <!-- 三维场景的的表述生成器。 -->
+ <bean id="SceneEncoder" class="com.supermap.services.rest.encoders.SceneEncoder" />
+    <!--  应用配置。 -->
+     <util:map id="restConfig">
+    	<entry key="MediaTypeMappingInfo" value-ref="MediaTypeMappingInfoBean" />
+    	<!--  默认提供的表述生成器。-->
+    	<entry key="systemEncoders" value="xmlEncoder,jsonEncoder,fastjsonEncoder,rjsonEncoder,templateEncoder,jsonpEncoder,javaStreamEncoder" />
+    	
+    		<!--  默认提供的类型解码器-->
+    	<entry key="systemDecoders" value="xmlDecoder,jsonDecoder,fastjsonDecoder,flexDecoder" />
+    	
+    		<!-- 扩展的资源加载器。 -->
+    	<entry key="extensionResourceFinders" value="jarResourceFinder" />
+    	
+    		<!-- 默认的http动作的处理类的beanName -->
+    	<entry key="defaultHttpActionHandler" value="defaultHttpActionHandler" />
+    	
+    	<!-- 默认的媒体类型  ，当用户期望的表述类型不支持，则用默认类型的内容给出错误信息-->
+    	<entry key="defaultMediaType" value="text/html" />
+    	
+    	<!-- 是否加载安全控制器 -->
+    	<entry key="securityControlEnable" value="false" />
+    	
+    	<!-- 是否以debug 形式运行应用，如果是，则所有 HTTP 响应的消息头 contentType 都是text/plain，以利于调试。-->
+    	<entry key="debug" value="false" />
+    	
+    	<!-- 根路径。 -->
+    	<entry key="rootPath" value="/services/rest" />
+    	
+    	<!-- 配置扩展资源的文件的名称 -->
+    	<entry key="resourceFileName" value="../webapps/iserver/WEB-INF/iserver-rest-resources.xml" />
+
+    </util:map>
+    
+   <!--  表述类型与url 后缀的映射关系。 --> 
+    <util:map id="MediaTypeMappingInfoBean">
+    	<!-- <entry key="xml" value="application/xml" /> -->
+    </util:map>
+</beans>
+

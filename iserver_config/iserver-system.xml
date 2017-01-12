@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<server id="a89cd4a86c4347929cfda5936110cab0" md5="101,-22,-7,110,-74,-93,86,-127,45,6,-106,-69,-19,28,-24,65"> 
+  <properties> 
+    <!-- iServer检查（1，数据库型 工作空间是否改变；2，数据库型数据源是否断开）的时间间隔，单位为秒，<=0时表示从不检查。-->  
+    <realspaceSecurityEnabled>true</realspaceSecurityEnabled>  
+    <outputPath>../../webapps/{contextPath}/output</outputPath>  
+    <envCheckEnabled>true</envCheckEnabled>  
+    <checkDatasourceConnectionInterval>30</checkDatasourceConnectionInterval>  
+    <outputSite>http://{ip}:{port}/{contextPath}/output/</outputSite>  
+    <restartWhenCrash>true</restartWhenCrash>  
+    <realspaceCacheAccessKey>-50 27 76 105 110 -118 -104 -26 -71 90 -24 -17 -115 80 -56 -17</realspaceCacheAccessKey> 
+  </properties>  
+  <management> 
+    <!-- 服务组件类型元数据 -->  
+    <component-types> 
+      <component-type alias="地图服务组件" configClass="com.supermap.services.components.MapConfig">com.supermap.services.components.impl.MapImpl</component-type>  
+      <component-type alias="数据服务组件" configClass="com.supermap.services.components.DataConfig">com.supermap.services.components.impl.DataImpl</component-type>  
+      <component-type alias="三维服务组件" configClass="com.supermap.services.components.RealspaceConfig">com.supermap.services.components.impl.RealspaceImpl</component-type>  
+      <component-type alias="动态标绘服务组件" configClass="com.supermap.services.components.PlotConfig">com.supermap.services.components.impl.PlotImpl</component-type>  
+      <component-type alias="交通网络分析服务组件" configClass="com.supermap.services.components.TransportationAnalystConfig">com.supermap.services.components.impl.TransportationAnalystImpl</component-type>  
+      <component-type alias="交通换乘分析服务组件" configClass="com.supermap.services.components.TrafficTransferAnalystConfig">com.supermap.services.components.impl.TrafficTransferAnalystImpl</component-type>  
+      <component-type alias="空间分析服务组件" configClass="com.supermap.services.components.DefaultComponentConfig">com.supermap.services.components.impl.SpatialAnalystImpl</component-type>  
+      <component-type alias="三维网络分析服务组件" configClass="com.supermap.services.components.DefaultComponentConfig">com.supermap.services.components.impl.NetworkAnalyst3DImpl</component-type> 
+    </component-types>  
+    <!-- 服务提供者类型元数据 -->  
+    <provider-types> 
+      <provider-type alias="本地地图服务提供者" configClass="com.supermap.services.providers.UGCMapProviderSetting">com.supermap.services.providers.UGCMapProvider</provider-type>  
+      <provider-type alias="本地数据服务提供者" configClass="com.supermap.services.providers.UGCDataProviderSetting">com.supermap.services.providers.UGCDataProvider</provider-type>  
+      <provider-type alias="动态标绘服务提供者" configClass="com.supermap.services.providers.UGCPlotProviderSetting">com.supermap.services.providers.UGCPlotProvider</provider-type>  
+      <provider-type alias="WMS地图服务提供者" configClass="com.supermap.services.providers.WMSMapProviderSetting">com.supermap.services.providers.WMSMapProvider</provider-type>  
+      <provider-type alias="WMTS地图服务提供者" configClass="com.supermap.services.providers.WMTSMapProviderSetting">com.supermap.services.providers.WMTSMapProvider</provider-type>  
+      <provider-type alias="WFS数据服务提供者" configClass="com.supermap.services.providers.WFSDataProviderSetting">com.supermap.services.providers.WFSDataProvider</provider-type>  
+      <provider-type alias="本地三维服务提供者" configClass="com.supermap.services.providers.UGCRealspaceProviderSetting">com.supermap.services.providers.UGCRealspaceProvider</provider-type>  
+      <provider-type alias="聚合地图服务提供者" configClass="com.supermap.services.providers.AggregationMapProviderSetting">com.supermap.services.providers.AggregationMapProvider</provider-type>  
+      <provider-type alias="聚合数据服务提供者" configClass="com.supermap.services.providers.AggregationDataProviderSetting">com.supermap.services.providers.AggregationDataProvider</provider-type>  
+      <provider-type alias="交通网络分析服务提供者" configClass="com.supermap.services.providers.TransportationAnalystSetting">com.supermap.services.providers.UGCTransportationAnalystProvider</provider-type>  
+      <provider-type alias="交通换乘分析服务提供者" configClass="com.supermap.services.providers.TrafficTransferAnalystSetting">com.supermap.services.providers.UGCTrafficTransferAnalystProvider</provider-type>  
+      <provider-type alias="三维网络分析服务提供者" configClass="com.supermap.services.providers.UGCNetworkAnalyst3DSetting">com.supermap.services.providers.UGCNetworkAnalyst3DProvider</provider-type>  
+      <provider-type alias="REST数据服务提供者" configClass="com.supermap.services.providers.RestDataProviderSetting">com.supermap.services.providers.RestDataProvider</provider-type>  
+      <provider-type alias="REST地图服务提供者" configClass="com.supermap.services.providers.RestMapProviderSetting">com.supermap.services.providers.RestMapProvider</provider-type>  
+      <provider-type alias="REST三维服务提供者" configClass="com.supermap.services.providers.RestRealspaceProviderSetting">com.supermap.services.providers.RestRealspaceProvider</provider-type>  
+      <provider-type alias="REST空间分析服务提供者" configClass="com.supermap.services.providers.RestSpatialAnalystProviderSetting">com.supermap.services.providers.RestSpatialAnalystProvider</provider-type>  
+      <provider-type alias="REST交通换乘分析服务提供者" configClass="com.supermap.services.providers.RestTrafficTransferAnalystProviderSetting">com.supermap.services.providers.RestTrafficTransferAnalystProvider</provider-type>  
+      <provider-type alias="REST交通网络分析服务提供者" configClass="com.supermap.services.providers.RestTransportationAnalystProviderSetting">com.supermap.services.providers.RestTransportationAnalystProvider</provider-type>  
+      <provider-type alias="空间分析服务提供者" configClass="com.supermap.services.providers.UGCSpatialAnalystProviderSetting">com.supermap.services.providers.UGCSpatialAnalystProvider</provider-type>  
+      <provider-type alias="天地图地图服务提供者" configClass="com.supermap.services.providers.TiandituMapProviderSetting">com.supermap.services.providers.TiandituMapProvider</provider-type>  
+      <provider-type alias="BingMaps地图服务提供者" configClass="com.supermap.services.providers.BingMapsMapProviderSetting">com.supermap.services.providers.BingMapsMapProvider</provider-type>  
+      <provider-type alias="GoogleMaps地图服务提供者" configClass="com.supermap.services.providers.GoogleMapsMapProviderSetting">com.supermap.services.providers.GoogleMapsMapProvider</provider-type>  
+      <provider-type alias="超图云服务地图服务提供者" configClass="com.supermap.services.providers.CloudMapProviderSetting">com.supermap.services.providers.CloudMapProvider</provider-type>  
+      <provider-type alias="SMTiles地图服务提供者" configClass="com.supermap.services.providers.SMTilesMapProviderSetting">com.supermap.services.providers.SMTilesMapProvider</provider-type>  
+      <provider-type alias="TPK地图服务提供者" configClass="com.supermap.services.providers.TPKMapProviderSetting">com.supermap.services.providers.TPKMapProvider</provider-type>  
+      <provider-type alias="ArcGIS REST地图服务提供者" configClass="com.supermap.services.providers.ArcGISRestMapProviderSetting">com.supermap.services.providers.ArcGISRestMapProvider</provider-type>  
+      <provider-type alias="ArcGIS REST数据服务提供者" configClass="com.supermap.services.providers.ArcGISRestDataProviderSetting">com.supermap.services.providers.ArcGISRestDataProvider</provider-type>  
+      <provider-type alias="ArcGIS REST网络分析服务提供者" configClass="com.supermap.services.providers.ArcGISRestNetworkAnalystProviderSetting">com.supermap.services.providers.ArcGISRestNetworkAnalystProvider</provider-type>  
+      <provider-type alias="GDP地图服务提供者" configClass="com.supermap.services.providers.GDPMapProviderSetting">com.supermap.services.providers.GDPMapProvider</provider-type>  
+      <provider-type alias="SVTiles地图服务提供者" configClass="com.supermap.services.providers.SVTilesMapProviderSetting">com.supermap.services.providers.SVTilesMapProvider</provider-type>  
+      <provider-type alias="MongoDB地图服务提供者" configClass="com.supermap.services.providers.MongoDBTileProviderSetting">com.supermap.services.providers.MongoDBTileProvider</provider-type>  
+      <provider-type alias="MongoDB三维服务提供者" configClass="com.supermap.services.providers.MongoDBRealspaceProviderSetting">com.supermap.services.providers.MongoDBRealspaceProvider</provider-type>  
+      <provider-type alias="OTS地图服务提供者" configClass="com.supermap.services.providers.OTSTileProviderSetting">com.supermap.services.providers.OTSTileProvider</provider-type>  
+      <provider-type alias="FastDFS地图服务提供者" configClass="com.supermap.services.providers.FastDFSTileProviderSetting">com.supermap.services.providers.FastDFSTileProvider</provider-type>  
+      <provider-type alias="UGCV5地图服务提供者" configClass="com.supermap.services.providers.UGCV5TileProviderSetting">com.supermap.services.providers.UGCV5TileProvider</provider-type>  
+      <provider-type alias="GeoPackage数据服务提供者" configClass="com.supermap.services.providers.GeoPackageDataProviderSetting">com.supermap.services.providers.GeoPackageDataProvider</provider-type>  
+      <provider-type alias="GeoPackage地图服务提供者" configClass="com.supermap.services.providers.GeoPackageMapProviderSetting">com.supermap.services.providers.GeoPackageMapProvider</provider-type>  
+      <provider-type alias="百度地图地图服务提供者" configClass="com.supermap.services.providers.BaiduMapProviderSetting">com.supermap.services.providers.BaiduMapProvider</provider-type>  
+      <provider-type alias="OpenStreetMap地图服务提供者" configClass="com.supermap.services.providers.OpenStreetMapProviderSetting">com.supermap.services.providers.OpenStreetMapProvider</provider-type>  
+      <provider-type alias="ZXY地图服务提供者" configClass="com.supermap.services.providers.ZXYTilesMapProviderSetting">com.supermap.services.providers.ZXYTilesMapProvider</provider-type> 
+    </provider-types>  
+    <!-- 服务接口类型元数据 -->  
+    <interface-types> 
+      <interface-type alias="WMS服务接口" configClass="com.supermap.services.wms.WMSConfig">com.supermap.services.wms.WMSServlet</interface-type>  
+      <interface-type alias="WFS服务接口" configClass="com.supermap.services.wfs.WFSConfig">com.supermap.services.wfs.WFSServlet</interface-type>  
+      <interface-type alias="WCS服务接口" configClass="com.supermap.services.wcs.WCSConfig">com.supermap.services.wcs.WCSServlet</interface-type>  
+      <interface-type alias="WPS服务接口" configClass="com.supermap.services.wps.WPSConfig">com.supermap.services.wps.WPSServlet</interface-type>  
+      <interface-type alias="Rest服务接口" configClass="com.supermap.services.rest.RestConfig">com.supermap.services.rest.RestServlet</interface-type>  
+      <interface-type alias="WMTS服务接口" configClass="com.supermap.services.wmts.WMTSConfig">com.supermap.services.wmts.WMTSServlet</interface-type>  
+      <interface-type alias="Rest/JSR服务接口" configClass="com.supermap.services.rest.JaxrsConfigForJersey">com.supermap.services.rest.JaxrsServletForJersey</interface-type>  
+      <interface-type alias="Handler服务接口" configClass="com.supermap.services.handler.HandlerServlet">com.supermap.services.handler.HandlerServlet</interface-type>  
+      <interface-type alias="ArcGIS REST服务接口" configClass="com.supermap.services.rest.AGSRestConfig">com.supermap.services.rest.AGSRestServlet</interface-type>  
+      <interface-type alias="百度REST服务接口" configClass="com.supermap.services.rest.RestConfig">com.supermap.services.rest.BaiduRestServlet</interface-type>  
+      <interface-type alias="Google REST服务接口" configClass="com.supermap.services.rest.RestConfig">com.supermap.services.rest.GoogleRestServlet</interface-type>  
+      <interface-type alias="TMS REST服务接口" configClass="com.supermap.services.rest.RestConfig">com.supermap.services.rest.TMSRestServlet</interface-type>  
+      <interface-type alias="OSM REST服务接口" configClass="com.supermap.services.rest.RestConfig">com.supermap.services.rest.OSMRestServlet</interface-type> 
+    </interface-types>  
+    <security> 
+      <accessControl> 
+        <SecuritySetting> 
+          <isSecurityEnabled>true</isSecurityEnabled>  
+          <tokenKey>0332999b93a6453fac4c6759bf8fd41d</tokenKey>  
+          <passwordProtectedSetting> 
+            <passwordDiffCount>5</passwordDiffCount>  
+            <userPasswordErrorCounterSetting> 
+              <passwordErrorProtectEnable>false</passwordErrorProtectEnable>  
+              <lockedTime>1200000</lockedTime>  
+              <periodLength>600000</periodLength>  
+              <allowFailCountPerPeriod>5</allowFailCountPerPeriod> 
+            </userPasswordErrorCounterSetting> 
+          </passwordProtectedSetting> 
+        </SecuritySetting> 
+      </accessControl>  
+      <storage class="com.supermap.server.config.SQLSecurityInfoStorageSetting"> 
+        <type>MYSQL</type>  
+        <connInfo> 
+          <username>iserver</username>  
+          <password>iserver</password>  
+          <dbType>MYSQL</dbType>  
+          <driverClass>org.mariadb.jdbc.Driver</driverClass>  
+          <jdbcUrl>jdbc:mysql://iserver-db:3306/iserverdb?useUnicode=true&amp;characterEncoding=UTF-8</jdbcUrl>  
+          <maxPoolSize>30</maxPoolSize>  
+          <initialPoolSize>5</initialPoolSize>  
+          <minPoolSize>5</minPoolSize>  
+          <maxIdleTime>3000</maxIdleTime>  
+          <maxWait>300000</maxWait> 
+        </connInfo>  
+        <useStoredAdmin>false</useStoredAdmin> 
+      </storage>  
+      <session class="com.supermap.server.config.RedisSessionSetting"> 
+        <type>Redis</type>  
+        <host>redis</host>  
+        <port>6379</port>  
+        <maxActive>1024</maxActive>  
+        <maxIdle>200</maxIdle>  
+        <maxWait>10000</maxWait>  
+        <timeout>10000</timeout>  
+        <testOnBorrow>true</testOnBorrow> 
+      </session> 
+    </security> 
+  </management>  
+  <hosts> 
+    <host cacheEnabled="true" port="32813" protocolScheme="http" type="webapp" uriBase="/services"> 
+      <interface-type>com.supermap.services.wms.WMSServlet</interface-type>  
+      <interface-type>com.supermap.services.rest.RestServlet</interface-type>  
+      <interface-type>com.supermap.services.handler.HandlerServlet</interface-type>  
+      <interface-type>com.supermap.services.wfs.WFSServlet</interface-type>  
+      <interface-type>com.supermap.services.wmts.WMTSServlet</interface-type>  
+      <interface-type>com.supermap.services.wcs.WCSServlet</interface-type>  
+      <interface-type>com.supermap.services.wps.WPSServlet</interface-type> 
+    </host> 
+  </hosts>  
+  <clustering> 
+    <reporters> 
+      <serviceToken>S7lCyZX3qASaE9_8Y6Ae6u4nStk0u5FDLZv3pW4jIjjSSCFm9ySlK60-QQ6sYN94xo6tIzDJq422OsG9TpLplJX9cy8wm3eMblN-6RRaZkk.</serviceToken>  
+      <reporter> 
+        <enabled>false</enabled>  
+        <address>http://anotherclusterservice:8090/iserver/services/cluster</address>  
+        <isTileWorker>false</isTileWorker>  
+        <token/> 
+      </reporter> 
+    </reporters>  
+    <cluster> 
+      <enabled>false</enabled>  
+      <address>http://localhost:8090/iserver/services/cluster</address>  
+      <connectTimeout>2000</connectTimeout>        
+      <readTimeout>120000</readTimeout>  
+      <useLocalCluster>false</useLocalCluster> 
+    </cluster>  
+    <clusterService> 
+      <enabled>true</enabled>  
+      <monitorPeriod>5000</monitorPeriod>  
+      <balancer>com.supermap.services.cluster.WeightedRoundBalancer</balancer> 
+    </clusterService>  
+    <!-- 以受控方式加入集群的配置方法
+	<controllable>
+      <address>http://clusterservice:8090/iserver/services/cluster</address>  
+      <enabled>true</enabled>
+	  <isTileWorker>true</isTileWorker>  
+      <token>myToken</token> 
+	</controllable>
+	--> 
+  </clustering>  
+  <harLog>     
+    <enabled>false</enabled>      
+    <name>iServerHTTPArchive</name>      
+    <monitorURLs/> 
+  </harLog>  
+  <queryFilter> 
+    <enabled>true</enabled>  
+    <!-- 默认过滤分号 -->  
+    <filterString/>  
+    <!-- eg: delete;drop;update;@;?;* --> 
+  </queryFilter>  
+  <!-- 临时资源存储配置  
+  <repository class="com.supermap.services.rest.repository.EhcacheRepoProvider" name="localRepository"> 
+    <config class="com.supermap.services.rest.repository.EhcacheRepoSetting"> 
+      <maxBytesOnHeap>100m</maxBytesOnHeap>  
+      <maxBytesLocalDisk>10g</maxBytesLocalDisk>  
+      <diskExpiryThreadIntervalSeconds>120</diskExpiryThreadIntervalSeconds> 
+    </config> 
+  </repository>  
+  -->  
+  <!-- 基于MongoDB的临时资源存储配置
+  -->  
+  <repository class="com.supermap.services.rest.repository.MongoDBRepoProvider" name="mongoRepository"> 
+    <config class="com.supermap.services.rest.repository.MongoDBRepoSetting"> 
+      <host>mongo</host>  
+      <port>27017</port>  
+      <dbName>supermap_temp</dbName>  
+      <username/>  
+      <password/> 
+    </config> 
+  </repository>  
+  <!-- 基于HSQLDB的临时资源存储配置
+  <repository class="com.supermap.services.rest.repository.HsqldbRepoProvider" name="localRepository"> 
+        <config class="com.supermap.services.rest.repository.HsqldbRepoSetting"> 
+            <port>10070</port>  
+            <startServer>true</startServer> 
+        </config> 
+  </repository>  
+  -->  
+  <storages> 
+    <storage> 
+      <id>cache_mongo</id>  
+      <tileSourceInfo class="com.supermap.services.tilesource.MongoDBTilesourceInfo"> 
+        <type>MongoDB</type>  
+        <serverAdresses> 
+          <string>mongo:27017</string> 
+        </serverAdresses>  
+        <database>supermap_cache</database>  
+        <username/>  
+        <password/> 
+      </tileSourceInfo> 
+    </storage> 
+  </storages> 
+</server>

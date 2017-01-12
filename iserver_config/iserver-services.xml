@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 用户发布的服务配置信息 -->
+<application> 
+  <componentSets> 
+    <!--配置服务组件集合--> 
+  </componentSets>  
+  <providerSets> 
+    <!--配置服务提供者集合--> 
+  </providerSets>  
+  <components> 
+    <!--配置服务组件-->  
+    <component class="com.supermap.services.components.impl.MapImpl" enabled="true" instanceCount="0" interfaceNames="rest" name="map-tiny" providers="map-tiny"> 
+      <config class="com.supermap.services.components.MapConfig"> 
+        <useCache>true</useCache>  
+        <tileCacheConfig class="com.supermap.services.tilesource.MongoDBTilesourceInfo"> 
+          <type>MongoDB</type>  
+          <serverAdresses> 
+            <string>mongo:27017</string> 
+          </serverAdresses>  
+          <database>supermap_cache</database>  
+          <username/>  
+          <password/> 
+        </tileCacheConfig>  
+        <utfGridCacheConfig class="com.supermap.services.tilesource.UTFGridTileSourceInfo"> 
+          <type>UTFGrid</type>  
+          <outputPath>/etc/icloud/SuperMapiServer/webapps/iserver/output</outputPath> 
+        </utfGridCacheConfig>  
+        <vectorTileCacheConfig class="com.supermap.services.tilesource.SVTilesTileSourceInfo"> 
+          <type>SVTiles</type>  
+          <outputPath>/etc/icloud/SuperMapiServer/webapps/iserver/output</outputPath> 
+        </vectorTileCacheConfig>  
+        <useUTFGridCache>false</useUTFGridCache>  
+        <useVectorTileCache>false</useVectorTileCache>  
+        <expired>0</expired>  
+        <cacheReadOnly>false</cacheReadOnly> 
+      </config> 
+    </component>  
+  </components>  
+  <providers> 
+    <!--配置服务提供者-->  
+    <provider class="com.supermap.services.providers.UGCMapProvider" enabled="true" name="map-tiny"> 
+      <config class="com.supermap.services.providers.UGCMapProviderSetting"> 
+        <workspacePath>/opt/iserver_data/tiny.smwu</workspacePath>  
+        <multiThread>true</multiThread>  
+        <poolSize>0</poolSize>  
+        <ugcMapSettings/>  
+        <useCompactCache>false</useCompactCache>  
+        <extractCacheToFile>true</extractCacheToFile>  
+        <queryExpectCount>1000</queryExpectCount>  
+        <ignoreHashcodeWhenUseCache>false</ignoreHashcodeWhenUseCache>  
+        <cacheDisabled>false</cacheDisabled>  
+        <isMultiInstance>false</isMultiInstance> 
+      </config> 
+    </provider>  
+  </providers> 
+</application>

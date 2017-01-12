@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TileMasterConfig>
+	<isUseLocalWorker>true</isUseLocalWorker>
+	<tileCountPerTask>2000</tileCountPerTask>
+	<analystBlankTile>false</analystBlankTile>
+</TileMasterConfig>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="GBK"?>
+<resources>
+	<resource>
+		<configID></configID>
+		<urlTemplate></urlTemplate>
+		<resourceType></resourceType>
+		<implementClass></implementClass>
+		<extensionEncoderBeanNames></extensionEncoderBeanNames>
+		<extensionDecoderBeanNames></extensionDecoderBeanNames>
+		<extensionHttpActionHandlerBeanName></extensionHttpActionHandlerBeanName>
+	</resource>
+</resources>

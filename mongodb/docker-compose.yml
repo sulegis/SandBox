@@ -1,0 +1,20 @@
+mongodb:
+   image: mongo:3.3.15
+   restart: always
+   volumes:
+     - ./mongo_data:/data/db
+   ports:
+     - "27017:27017"
+
+mongo-express:
+   image: mongo-express
+   restart: always
+   ports:
+     - "8081:8081"
+   environment:
+     - ME_CONFIG_OPTIONS_EDITORTHEME="ambiance"
+     - ME_CONFIG_BASICAUTH_USERNAME=admin
+     - ME_CONFIG_BASICAUTH_PASSWORD=supermap
+   links:
+     - mongodb:mongo
+
