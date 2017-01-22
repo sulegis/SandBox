@@ -20,5 +20,6 @@ Just Sandbox
  * 日志收集的集成
  * 节点监控的集成
  * 多物理机数据的同步和持久化，NFS方案？https://github.com/ContainX/docker-volume-netshare
+
 ##FAQ
  * elasticsearch启动失败：运行：sudo sysctl -w vm.max_map_count=262144
